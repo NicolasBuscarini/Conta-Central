@@ -1,0 +1,57 @@
+<nav class="d-block d-md-none fixed-bottom">
+    <div class="container-fluid">
+        <div class="row bg-light custom-top-border">
+            <div class="col-md-12">
+                <div class="row" [collapse]="isCollapsed">
+                    <div class="collapse navbar-collapse pb-4" id="navbarSide" [collapse]="isCollapsed">
+                        <app-side-bar-links-shared></app-side-bar-links-shared>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 custom-icon">
+                        <span routerLink="./home"><i class="bi bi-house-door"></i></span>
+                    </div>
+                    <div class="col-2 custom-icon">
+                        <span routerLink="/dash/relatorio"><i class="bi bi-file-ruled"></i></span>
+                    </div>
+                    <div class="col-4 custom-border">
+                        <span (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" class="custom-dollar"><i class="bi bi-currency-dollar"></i></span>
+                    </div>
+                    <div class="col-2 custom-icon" dropdown [dropup]="true">
+                        <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu dropdown-menu-right overflow-auto custom-carteira" role="menu" aria-labelledby="button-dropup">      
+                            <li *ngFor="let carteira of listCarteira">
+                                <span class="btn" (click)="setSelectedCarteira(carteira.id)">{{carteira.nome}}</span>                               
+                            </li>
+                        </ul>
+                        <span dropdownToggle aria-controls="dropdown-dropup"><i class="bi bi-wallet2"></i></span>
+                    </div>
+                    <div class="col-2 custom-icon" dropdown [dropup]="true"> 
+                        <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-dropup">
+                            <li role="menuitem"><a class="dropdown-item" routerLink="./minha-conta">Editar</a></li>
+                            <li class="divider dropdown-divider"></li>
+                            <li role="menuitem"><a class="dropdown-item" (click)="logout()">Sair</a></li>
+                        </ul>
+                        <span><i id="button-dropup" dropdownToggle aria-controls="dropdown-dropup" class="bi bi-person"></i></span>
+                    </div>
+                </div>
+
+                <div class="row bg-light custom-row">
+                    <div class="col-2">
+                        <span>Home</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Relatórios</span>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col-2">
+                        <span>Selecionar Carteira</span>
+                    </div>
+                    <div class="col-2">
+                        <span>Conta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,51 @@
+<div class="card" *ngIf="cobranca.fromUserId == user.id">
+   <div class="card-header">
+      <strong>Cobrando: </strong> {{cobranca.toUser.userName}}
+   </div>
+   <div class="card-body">
+      Valor da cobrança: <strong>{{cobranca.valor | currency:"BRL": 'R$ '}}</strong>
+      <hr class="dropdown-divider">
+      Para a carteira: {{cobranca.toCarteiraId}}
+      <hr class="dropdown-divider">
+      <div class="text-truncate" data-bs-toggle="tooltip" data-bs-placement="right" title="{{cobranca.descricao}}">
+         Descricao: {{cobranca.descricao}}
+      </div>
+   </div>
+   <div class="card-footer">
+      <button class="btn btn-danger" [disabled]="confirmPagamento > 1" (click)="rejeitarCobranca(cobranca.id)">
+         Cancelar
+      </button>
+      <h6 class="custom-data-text text-muted">{{cobranca.data | date: 'dd/MM/yyyy'}}</h6> 
+   </div>
+</div>
+
+<div class="card"  *ngIf="cobranca.toUserId == user.id">
+   <div class="card-header">
+      <strong>Cobrança de</strong> {{cobranca.fromUser.userName}}
+   </div>
+   <div class="card-body">
+      Valor da cobranca: <strong>{{cobranca.valor | currency:"BRL": 'R$ '}}</strong>
+      <hr class="dropdown-divider">
+      Carteira: {{cobranca.fromCarteiraId}}
+      <hr class="dropdown-divider">
+      <div class="text-truncate" data-bs-toggle="tooltip" data-bs-placement="right" title="{{cobranca.descricao}}">
+         Descricao: {{cobranca.descricao}}
+      </div>
+   </div>
+   <div class="card-footer">
+      <button class="btn btn-success me-2" [disabled]="confirmPagamento > 1" (click)="pagarCobranca(cobranca.id)">
+         <span *ngIf="confirmPagamento != 1">Pagar</span>
+         <span *ngIf="confirmPagamento == 1">Confirmar</span>
+      </button>
+      <button class="btn btn-danger" [disabled]="confirmPagamento > 1" (click)="rejeitarCobranca(cobranca.id)">
+         Rejeitar
+      </button>
+      <h6 class="custom-data-text text-muted">{{cobranca.data | date: 'dd/MM/yyyy'}}</h6> 
+   </div>
+</div>
+<div class="pt-2">
+   <alert *ngIf="confirmPagamento == 1" [dismissible]="true" (onClosed)="reset()" type="warning">
+      <strong>Confirmar pagamento</strong>
+   </alert>
+</div>
+<div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>

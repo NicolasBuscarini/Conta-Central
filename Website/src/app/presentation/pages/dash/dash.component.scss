@@ -1,0 +1,25 @@
+.custom-body {
+   background-image: url(/assets/img/dashlogo.jpg);
+   background-size: cover;
+   overflow: hidden;
+   min-height: 100vh;
+}
+
+footer {
+   padding: 0 1rem;
+   background: black;
+   color: white;
+   opacity: .8;
+}
+
+@media (max-width: 768px) {
+   .custom-body {
+      background-image: url(/assets/img/bg.png);
+      background-repeat:no-repeat;
+      background-position: center center;
+   }
+}
+
+.custom-margin {
+   margin-bottom: 90px;
+}

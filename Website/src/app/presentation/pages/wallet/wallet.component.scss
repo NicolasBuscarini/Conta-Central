@@ -1,0 +1,24 @@
+.content {
+   margin-left: 200px;
+   margin-bottom: 90px;
+   margin-top: 60px;
+   padding-top: 8px;
+}   
+
+@media (max-width: 768px) {
+   .content {
+      margin-top: 0px;
+      margin-left: 0px;
+  }
+}
+
+.custom-text {
+   color:white;
+   padding-left: 0.5rem;
+   text-decoration: none;
+}
+
+.custom-navbar {
+   justify-content: flex-end;
+}
+ 

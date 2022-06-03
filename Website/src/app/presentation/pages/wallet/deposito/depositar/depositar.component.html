@@ -1,0 +1,47 @@
+<div class="container" *ngIf="carteiraService.selectedCarteira">
+	<h2>Depositar</h2>
+	<div class="card">
+		<div class="card-header text-center">
+			<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+				<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+				<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+			</svg>
+			{{authenticationService.currentUser.userName}}
+		</div>
+		<div class="card-body">
+			<div>
+				<div class="mb-3">
+					<div *ngIf="error" class="alert alert-danger mb-3">
+						{{error}}
+					</div>
+					<div *ngIf="success" class="alert alert-success" role="alert">
+						{{success}}
+					</div>
+					<form [formGroup]="depositoForm">
+						<label for="InputDeposito" class="form-label">Valor do depósito:</label>
+						<input type="number" formControlName="valor" class="form-control" id="valor"><br>
+						<label for="InputDeposito" class="form-label">Descricao:</label>
+						<input type="text" formControlName="descricao" class="form-control" id="descricao"><br>
+						<label for="InputDeposito" class="form-label">External Name:</label>
+						<input type="text" formControlName="externalName" class="form-control" id="externalName"><br>
+						<label for="InputDeposito" class="form-label">External Id:</label>
+						<input type="number" min="0"  formControlName="externalId" class="form-control" id="externalId"><br>
+					</form>
+				</div>
+				<button type="button" class="btn pull-right btn-success" (click)= "depositar()">Depositar</button>
+			</div>
+		</div>
+		<div>
+			<div class="card-footer text-muted text-center">
+				ID da carteira: {{carteiraService.selectedCarteira.id}}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<button type="button" class="btn btn-primary" routerLink="../deposito-list">Lista de Depósitos</button>
+		</div>
+	</div>
+</div>

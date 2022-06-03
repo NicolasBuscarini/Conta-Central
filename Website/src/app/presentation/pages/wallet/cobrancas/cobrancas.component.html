@@ -1,0 +1,15 @@
+<div class="container">
+   <button type="button" class="btn btn-dark" routerLink="../cobrar">Nova cobrança</button>
+   <div class="row">
+      <div class="col-md-6 pt-2" *ngFor="let cobranca of cobrancasList">
+         <app-cobranca-pendente [cobranca]="cobranca" (update)="cobrancasPendentes()"></app-cobranca-pendente> 
+      </div>
+      <div class="row mt-2" *ngIf="cobrancaIsEmpty">
+         <div class="col-md-12">
+            <h5>
+               Não ha cobrancas pendentes
+            </h5>
+         </div>
+      </div>
+   </div>
+</div>

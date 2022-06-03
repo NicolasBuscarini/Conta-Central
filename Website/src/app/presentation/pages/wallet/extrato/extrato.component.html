@@ -1,0 +1,28 @@
+<div class="row">
+   <div *ngIf="choice == null">
+               <button class="me-2 btn btn-dark" (click)="toggle(2)">Ver Extrato das Carteiras</button>
+               <button class="me-2 btn btn-dark" (click)="toggle(1)">Ver Extrato do Usuário</button>
+   </div>
+
+   <div class="div" *ngIf="choice == 'carteira'">
+       <div class="col-md-12">
+           <button class="btn btn-dark" (click)="toggle(1)">Ver Extrato do Usuário</button>
+       </div>
+   </div>
+
+   <div class="div" *ngIf="choice == 'user'">
+       <div class="col-md-12">
+           <button class="btn btn-dark" (click)="toggle(2)">Ver Extrato das Carteiras</button>
+       </div>
+   </div>
+</div>
+
+<div class="row mt-2">
+   <div class="col-md-12" *ngIf="choice == 'user'">
+               <app-extrato-user></app-extrato-user>
+   </div>
+
+   <div class="col-md-12" *ngIf="choice == 'carteira'">
+               <app-extrato-carteira></app-extrato-carteira>
+   </div>
+</div>

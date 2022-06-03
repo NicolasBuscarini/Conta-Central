@@ -1,0 +1,42 @@
+<div class="container">
+   <div class="row">
+      <div class="col-md-10 mx-auto">
+         <div class="card">
+            <div class="card-body p-2">
+               <div class="input-group rounded">
+                  <input [(ngModel)]="inputSearchString" (ngModelChange)="onSearchChange()" type="search" class="form-control rounded" placeholder="Procurar..." aria-label="Search"/>
+                  <span class="input-group-text">
+                     <i class="bi bi-search"></i>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <div class="container my-1">
+            <alert type="warning" *ngIf="warningAlert">
+               <strong>{{warningAlert}}</strong>
+            </alert>
+            <alert type="danger" *ngIf="errorAlert">
+               <span>Erro ao efetuar a busca: <br> <strong>{{errorAlert}}</strong> </span>
+            </alert>
+         </div>
+         <div #infiniteScrollContainer class="custom-scroll-bar">
+            <div infiniteScroll (scrolled)="onScroll()" [infiniteScrollContainer]="infiniteScrollContainer" >
+               <table class="table table-hover rounded">
+                  <thead>
+                     <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let carteira of carteirasDTO">
+                        <td>{{carteira.id}}</td>
+                        <td>{{carteira.nome}}</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

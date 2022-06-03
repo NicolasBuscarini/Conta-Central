@@ -1,0 +1,35 @@
+.side-bar-links {
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    list-style-type: none;
+    width: 100%;
+
+    li {
+        padding: 8px 16px;
+        border-bottom: 1px solid gray;
+        a {
+            display: block;
+            margin: 0px; 
+            height: 100%;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+        }
+
+        i {
+            margin-right: 10px;
+        }        
+    }
+
+    li:hover {
+        background-color: #494c4e;
+        text-decoration: none;  
+    }
+
+    li:focus {
+        background-color: #6e7477;
+        text-decoration: none;  
+    }
+
+}

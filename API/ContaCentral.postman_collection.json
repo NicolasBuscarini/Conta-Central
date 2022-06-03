@@ -1,0 +1,818 @@
+{
+	"info": {
+		"_postman_id": "91a58cc3-9acf-4ce5-b82f-066a2ee16492",
+		"name": "ContaCentral",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "/api/Auth/sign-up",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Usuario2\",\n    \"email\": \"Usuario2@teste.com.br\",\n    \"cpf\": \"744.593.330-15\",\n    \"password\": \"Ab!123\",\n    \"passwordConfirm\": \"Ab!123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/sign-up",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"sign-up"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Auth/sign-in",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Usuario2\",\n    \"password\": \"Ab!123\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"sign-in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Auth/get-current-user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/get-current-user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"get-current-user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Auth/list-users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/list-users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"list-users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Auth/get-userdto",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth/get-userdto?id=08d9851d-9748-469d-809a-8cdad4913511",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"get-userdto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "08d9851d-9748-469d-809a-8cdad4913511"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carteira",
+					"item": [
+						{
+							"name": "/api/Carteira/create-carteira",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"zzzz\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/create-carteira",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"create-carteira"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/list-carteiras",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/list-carteiras",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"list-carteiras"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/search-carteira",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"SortOrder\": \"id\",\r\n    \"SearchString\": \"a\",\r\n    \"PageNumber\": 1,\r\n    \"PageSize\": 30\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/search-carteira",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"search-carteira"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/get-carteira",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/get-carteira?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"get-carteira"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/get-transacao",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/get-transacao?transacaoId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"get-transacao"
+									],
+									"query": [
+										{
+											"key": "transacaoId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/list-transacoes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/list-transacoes?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"list-transacoes"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/list-user-transacoes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/list-user-transacoes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"list-user-transacoes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/desativar-carteira",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "1"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/desativar-carteira",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"desativar-carteira"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Carteira/update-carteira-principal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Carteira/update-carteira-principal?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Carteira",
+										"update-carteira-principal"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deposito",
+					"item": [
+						{
+							"name": "/api/Deposito/depositar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valor\": 1,\n    \"descricao\": \"\",\n    \"carteiraId\": 1,\n    \"externalName\": \"\",\n    \"externalId\": 0\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Deposito/depositar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Deposito",
+										"depositar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Deposito/list-depositos-by-carteira-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Deposito/list-depositos-by-carteira-id?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Deposito",
+										"list-depositos-by-carteira-id"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Deposito/get-deposito",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Deposito/get-deposito?depositoId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Deposito",
+										"get-deposito"
+									],
+									"query": [
+										{
+											"key": "depositoId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Relatorio",
+					"item": [
+						{
+							"name": "/api/Relatorio/gerar-relatorio-by-carteira",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"carteiraId\": 1,\n    \"ano\": 2020\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/gerar-relatorio-by-carteira",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"gerar-relatorio-by-carteira"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Relatorio/gerar-relatorio-by-user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "2021"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/gerar-relatorio-by-user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"gerar-relatorio-by-user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Relatorio/get-relatorio-by-carteira",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/get-relatorio-by-carteira?carteiraId=1&ano=2021",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"get-relatorio-by-carteira"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										},
+										{
+											"key": "ano",
+											"value": "2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Relatorio/get-relatorio-by-user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/get-relatorio-by-user?ano=2021",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"get-relatorio-by-user"
+									],
+									"query": [
+										{
+											"key": "ano",
+											"value": "2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Relatorio/list-relatorio-anos-disponiveis",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/list-relatorio-anos-disponiveis",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"list-relatorio-anos-disponiveis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Relatorio/list-anos-disponiveis-to-create-relatorio",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Relatorio/list-anos-disponiveis-to-create-relatorio",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Relatorio",
+										"list-anos-disponiveis-to-create-relatorio"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Saque",
+					"item": [
+						{
+							"name": "/api/Saque/sacar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valor\": 1,\n    \"descricao\": \"\",\n    \"carteiraId\": 1\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Saque/sacar",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Saque",
+										"sacar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Saque/list-saques-by-carteira-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Saque/list-saques-by-carteira-id?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Saque",
+										"list-saques-by-carteira-id"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Saque/saque-by-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Saque/saque-by-id?saqueId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Saque",
+										"saque-by-id"
+									],
+									"query": [
+										{
+											"key": "saqueId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transferencia",
+					"item": [
+						{
+							"name": "/api/Transferencia/transferir",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valor\": 6,\n    \"descricao\": \"\",\n    \"fromCarteiraId\": 1,\n    \"toCarteiraId\": 2\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Transferencia/transferir",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Transferencia",
+										"transferir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Transferencia/list-transferencias-by-carteira-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Transferencia/list-transferencias-by-carteira-id?carteiraId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Transferencia",
+										"list-transferencias-by-carteira-id"
+									],
+									"query": [
+										{
+											"key": "carteiraId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/Transferencia/get-transferencia-by-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Transferencia/get-transferencia-by-id?transferenciaId=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Transferencia",
+										"get-transferencia-by-id"
+									],
+									"query": [
+										{
+											"key": "transferenciaId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:44337"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

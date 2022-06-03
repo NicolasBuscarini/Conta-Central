@@ -1,0 +1,48 @@
+<ul class="side-bar-links">
+    <li>
+       <a class="" routerLink="/wallet/extrato">
+         <i class="bi bi-receipt"></i>Extrato
+       </a>
+    </li>
+    <li>
+      <a class="dropdown-toggle" (click)="isSaqueCollapsed = !isSaqueCollapsed" [attr.aria-expanded]="!isSaqueCollapsed" aria-controls="collapseBasic">
+          <i class="bi bi-cash-stack"></i>Sacar<span class="caret"></span>
+      </a>
+       <div id="collapseBasic" [collapse]="isSaqueCollapsed" [isAnimated]="true">
+          <hr class="dropdown-divider"/>
+          <li><a class="" href="#" routerLink="/wallet/list-saques">Saques</a></li>
+          <li><a class="" href="#" routerLink="/wallet/saque">Sacar</a></li>
+          <hr class="dropdown-divider bg-light"/>
+       </div>
+    </li>
+    <li class="">
+       <a class="dropdown-toggle" (click)="isDepositoCollapsed = !isDepositoCollapsed" [attr.aria-expanded]="!isDepositoCollapsed" aria-controls="collapseBasic"><i class="fa fa-home"></i>Depositar</a>
+       <div id="collapseBasic" [collapse]="isDepositoCollapsed" [isAnimated]="true">
+          <li><a class="custom-text" href="#" routerLink="/wallet/deposito-list">Depositos</a></li>   
+          <li><a class="custom-text" href="#" routerLink="/wallet/deposito">Depositar</a></li>
+       </div>
+    </li>
+    <li class="">
+       <a class="dropdown-toggle" (click)="isTransferenciaCollapsed = !isTransferenciaCollapsed" [attr.aria-expanded]="!isTransferenciaCollapsed" aria-controls="collapseBasic"><i class="fa fa-home"></i>Transferir</a>
+       <div id="collapseBasic" [collapse]="isTransferenciaCollapsed" [isAnimated]="true">
+          <hr class="dropdown-divider bg-light"/>
+          <li><a class="" href="#" routerLink="/wallet/transferencias">Transferências</a></li>
+          <li><a class="" href="#" routerLink="/wallet/transferencia-transferir">Transferir</a></li>
+       </div>
+    </li>
+    <li class="">
+       <a class="" routerLink="/wallet/carteiras">
+         <i class="fa fa-home"></i>Carteiras
+       </a>
+    </li>
+    <li class="">
+       <a class="" routerLink="/wallet/cobrancas">
+         <i class="fa fa-home"></i>Cobrancas
+       </a>
+    </li>
+    <li class="">
+       <a class="" routerLink="/wallet/search-carteira">
+         <i class="fa fa-home"></i>Procurar
+       </a>
+    </li>
+ </ul>

@@ -1,0 +1,47 @@
+<div class="container" *ngIf="selectedCarteira">
+	<div class="card my-4">
+		<div class="card-header">
+			Transferencias
+		</div>
+		<div class="card-body">
+			<div class="row my-1" *ngFor="let transferencia of transferencias">
+					<div class="col-md-1 text-center" *ngIf="transferencia.fromCarteira.userId == currentUser.id">
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+						</svg>
+					</div>
+               <div class="col-md-1 text-center" *ngIf="transferencia.toCarteira.userId == currentUser.id">
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+						</svg>
+					</div>
+					<div class="col-md-1">
+						<p>ID: {{transferencia.id}}</p>
+					</div>
+					<div class="col-md-3 text-truncate" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{transferencia.descricao}}"> 
+						<p>{{transferencia.descricao}}</p>
+					</div>
+					<div class="col-md-2"> 
+						<p>R$ {{transferencia.valor}}</p>
+					</div>
+					<div class="col-md-2">From:
+						<p>{{transferencia.fromCarteiraId}}</p>
+					</div>
+					<div class="col-md-2" >To:
+						<p>{{transferencia.fromCarteiraId}}</p>
+					</div>
+					<div class="col-md-1">
+						<button type="button" class="btn btn-outline-info" (click)="setTransferenciaView(transferencia)" routerLink="../transferencia-view">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+								<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+								<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+							 </svg>
+						</button>
+					</div>
+               <div class="d-block d-md-none">
+                  <hr class="dropdown-divider bg-dark"/>
+               </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container my-4" *ngIf="selectedCarteira">
+	<select class="form-select text-truncate" (change)="getDeposito($event.target.value)">
+		<option *ngIf="deposito" value="{{deposito.id}}" selected> (Selecionado) ID:  {{deposito.id}}, {{deposito.descricao}}</option>
+		<option *ngFor="let deposito of listDeposito" value="{{deposito.id}}">
+			ID: {{deposito.id}}, {{deposito.descricao}}
+		</option>
+	</select>
+</div>
+<div class="container" *ngIf = "deposito">
+	<div class="card my-4">
+		<div class="card-header text-center">
+			<h4 class="card-title">Depósito</h4>
+		</div>
+		<div class="card-body">
+			<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="card-title">Deposito ID: {{deposito.id}}</h2>
+						</div>
+						<div class="col-md-6">
+							<h2 class="card-title">Valor: R$ {{deposito.valor}} </h2>
+						</div>
+					</div>
+					<br>
+					<p class="card-text">Descrição: {{deposito.descricao}}</p>
+					<p class="card-text">Carteira ID: {{deposito.carteiraId}}</p>
+					<div class="row">
+						<div class="col-md-6">
+							<p class="card-text">External ID: {{deposito.externalId}}</p>
+						</div>
+						<div class="col-md-6">
+							<p class="card-text">External Name: {{deposito.externalName}}</p>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="card-footer text-muted text-center">
+			{{deposito.dataHora}}
+		</div>
+	</div>
+</div>
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<button type="button" class="btn btn-primary" routerLink="../deposito-list">Lista de Depósitos</button>
+		</div>
+	</div>
+</div>

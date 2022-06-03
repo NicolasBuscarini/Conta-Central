@@ -1,0 +1,63 @@
+<div class="container my-3" *ngIf="selectedCarteira">
+   <h2>Ver carteira:</h2>
+   <div class="card">
+      <div class="card-header text-center">
+         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-wallet"
+            viewBox="0 0 16 16">
+            <path
+               d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
+         </svg>
+         {{selectedCarteira.nome}}
+      </div>
+      <div class="card-body">
+         <div class="row">
+            <div class="col-md-10">
+               <div class="row my-2">
+                  <div class="col-md-12">
+                     <h1 class="card-title">Saldo: R${{selectedCarteira.saldo}}</h1>
+                  </div>
+               </div>
+               <div class="row my-2">
+                  <div class="col-md-12">
+                     <p class="card-text">Email: {{authenticationService.currentUser.email}}</p>
+                  </div>
+               </div>
+               <div class="row my-2">
+                  <div class="col-md-12">
+                     <p class="card-text">CPF: {{authenticationService.currentUser.cpf}}</p>
+                  </div>
+               </div>
+               <div class="row my-2">
+                  <div class="col-md-12">
+                     <p class="card-text">UserId: {{authenticationService.currentUser.id}}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-2">
+               <button type="button" class="btn btn-danger" (click)="setSelectedCarteira(selectedCarteira)"
+                  routerLink="../carteira-desativar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-trash-fill" viewBox="0 0 16 16">
+                     <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                  </svg>
+               </button>
+            </div>
+         </div>
+      </div>
+      <div class="card-footer text-muted text-center">
+         ID da carteira: {{selectedCarteira.id}}
+      </div>
+   </div>
+</div>
+<div class="container mt-3">
+   <div class="row">
+      <div class="col-md-12 text-center">
+         <a routerLink="../carteiras">
+            <button type="button" class="btn btn-primary">
+               Minhas Carteiras
+            </button>
+         </a>
+      </div>
+   </div>
+</div>

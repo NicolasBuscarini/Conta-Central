@@ -1,0 +1,66 @@
+.custom-body {
+   background-image: url(/assets/img/bg.png);
+   background-size: cover;
+   overflow: hidden;
+   min-height: 100vh;
+}
+
+main{
+   padding: 1rem;
+}
+
+footer {
+   padding: 0 1rem;
+   background: black;
+   color: white;
+   opacity: .8;
+}
+
+.custom-card {
+   opacity: .8;
+   height: 100%;
+   text-align: center;
+
+   .card-header {
+      font-size: 1rem;
+   }
+
+   .card-body {
+      font-size: 1.4rem;
+   }
+
+}
+
+.custom-top-navbar {
+   opacity: .8;
+   background: black;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding: 1rem 0.8rem 0 0.8rem;
+}
+
+.custom-carteira-button {
+   background: black;
+   color: white;
+}
+
+.custom-margin {
+   margin-bottom: 1rem;
+}
+
+.top-nav-item {
+   margin: 0 0 0 0.5rem;
+}
+
+.custom-logo {
+   margin-right: 0;
+}
+
+@media (max-width: 768px) {
+   .custom-body {
+      background-image: url(/assets/img/bg.png);
+      background-repeat:no-repeat;
+      background-position: center center;
+   }
+}

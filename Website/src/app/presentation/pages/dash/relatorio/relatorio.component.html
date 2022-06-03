@@ -1,0 +1,68 @@
+<div class="container-fluid my-4">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="card">
+        <div class="card-header text-center">
+          <div *ngIf="!relatorios">
+            <label for="anoForm">Ver relatorio de receitas e despesas do usuário</label>
+            <select id="anoForm" class="form-select" (change)="GetRelatorioByUser($event.target.value)">
+              <option selected>Selecione um ano</option>
+              <option *ngFor="let ano of relatorioAnosDisponiveis" value="{{ano}}">{{ano}}</option>
+            </select>
+            <hr *ngIf="!loading" >
+            <label for="anoForm" *ngIf="!loading" >Gerar relatorio de receitas e despesas do usuário</label>
+            <select id="anoForm" *ngIf="!loading" class="form-select" (change)="GerarRelatorioByUser($event.target.value)">
+              <option selected>Selecione um ano</option>
+              <option *ngFor="let ano of anosDisponiveisToCreateRelatorio" value="{{ano}}">{{ano}}</option>
+            </select>
+            <div class="spinner-border text-dark mt-2" role="status" *ngIf="loading">
+              <span class="sr-only">Gerando relatório...</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive table-bordered" *ngIf="relatorios">
+            <thead>
+              <tr>
+                <th class="bg-dark text-white" scope="col">Carteira</th>
+                <th class="bg-dark text-white" *ngFor="let total of totais; index as i" scope="col">
+                  <span>{{GetNomeMesByNumber(i)}}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="border border-bottom" *ngFor="let relatorio of relatorios">
+              <tr>
+                <th scope="row">
+                    {{GetCarteiraById(relatorio.carteiraId)}}
+                </th>
+                <td *ngFor="let relatorioMes of relatorio.relatorioRecDespItems">
+                    {{relatorioMes.total | currency:"BRL": 'R$ '}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Receita</th>
+                <td *ngFor="let relatorioMes of relatorio.relatorioRecDespItems">
+                    {{relatorioMes.receita | currency:"BRL": 'R$ '}}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Despesa</th>
+                <td *ngFor="let relatorioMes of relatorio.relatorioRecDespItems">
+                    {{relatorioMes.despesa | currency:"BRL": 'R$ '}}
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                 <th class="bg-dark text-white" scope="row">Total</th>
+                 <td class="bg-dark text-white" *ngFor="let total of totais">
+                     {{total | currency:"BRL": 'R$ '}}
+                 </td>
+               </tr>
+            </tfoot>              
+          </table> 
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

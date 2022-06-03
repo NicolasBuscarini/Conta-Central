@@ -1,0 +1,137 @@
+<nav class="navbar-dark bg-dark custom-bg-opacity-8">
+   <div class="card bg-dark">
+      <div class="card-header text-center">
+         <div class="col-md-6 offset-md-3">
+            <a routerLink="/"><img class="img-fluid" src="assets/img/logo.png"></a>
+         </div>
+      </div>
+      <ul class="navbar-nav bg-dark list-group list-group-horizontal ms-auto">
+         <li class="list-group-item bg-dark">
+            <a class="text-light text-decoration-none" routerLink="/login">Entrar</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+<div class="bg-custom">
+   <div class="container-md Custom-Register-Div">
+      <h3 class="mb-4 text-center">Registre-se</h3>
+      <form [formGroup]="signUpForm">
+         <!-- Input NomeCompleto -->
+         <div class="form-group">
+            <label for="nomeCompleto">Nome Completo</label>
+            <input formControlName="nomeCompleto" type="text" class="form-control">
+            <div *ngIf="fSignUp.nomeCompleto.touched && fSignUp.nomeCompleto.invalid">
+               <div *ngIf="fSignUp.nomeCompleto.errors.required">
+                  <alert type="danger">Nome Completo é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input Email -->
+         <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" class="form-control">
+            <div *ngIf="fSignUp.email.touched && fSignUp.email.invalid">
+               <div *ngIf="fSignUp.email.errors.required">
+                  <alert type="danger">Email é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input UserName -->
+         <div class="form-group">
+            <label for="userName">Nome do Usuário</label>
+            <input formControlName="userName" type="text" class="form-control">
+            <div *ngIf="fSignUp.userName.touched && fSignUp.userName.invalid">
+               <div *ngIf="fSignUp.userName.errors.required">
+                  <alert type="danger">Nome do Usuário é um campo obrigatório!</alert>
+               </div>
+               <div *ngIf="fSignUp.userName.errors.cannotContainSpace">
+                  <alert type="danger">Nome do Usuário não pode conter espaços!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input Password -->
+         <div class="form-group">
+            <label for="senha">Senha</label>
+            <input formControlName="password" type="password" class="form-control">
+            <div *ngIf="fSignUp.password.touched && fSignUp.password.invalid">
+               <div *ngIf="fSignUp.senha.errors.required">
+                  <alert type="danger">Senha é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input PasswordConfirm -->
+         <div class="form-group">
+            <label for="senhaConfirme">Confirme a senha</label>
+            <input formControlName="passwordConfirm" type="password" class="form-control">
+            <div *ngIf="fSignUp.passwordConfirm.touched && fSignUp.passwordConfirm.invalid">
+               <div *ngIf="fSignUp.passwordConfirm.errors.required">
+                  <alert type="danger">Senha é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input CPF -->
+         <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input formControlName="cpf" type="text" class="form-control" mask="000.000.000-00">
+            <div *ngIf="fSignUp.cpf.touched && fSignUp.cpf.invalid">
+               <div *ngIf="fSignUp.cpf.errors.required">
+                  <alert type="danger">CPF é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input DataNascimento -->
+         <div class="form-group">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input formControlName="dataNascimento" type="date" class="form-control" max="9999-12-31">
+            <div *ngIf="fSignUp.dataNascimento.touched && fSignUp.dataNascimento.invalid">
+               <div *ngIf="fSignUp.dataNascimento.errors.required">
+                  <alert type="danger">Data de Nascimento é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input CEP -->
+         <div class="form-group">
+            <label for="cep">CEP</label>
+            <input formControlName="cep" type="string" class="form-control" mask="00000-000">
+            <div *ngIf="fSignUp.cep.touched && fSignUp.cep.invalid">
+               <div *ngIf="fSignUp.cep.errors.required">
+                  <alert type="danger">CEP é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input Endereco1 -->
+         <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input formControlName="endereco" type="text" class="form-control">
+            <div *ngIf="fSignUp.endereco.touched && fSignUp.endereco.invalid">
+               <div *ngIf="fSignUp.endereco.errors.required">
+                  <alert type="danger">Endereço é um campo obrigatório!</alert>
+               </div>
+            </div>
+         </div>
+         <!-- Input Endereco2 -->
+         <div class="form-group">
+            <label for="endereco2">Endereço 2</label>
+            <input formControlName="endereco2" type="text" class="form-control">
+         </div>
+         <!-- Input Telefone -->
+         <div class="form-group">
+            <label for="phoneNumber">Telefone</label>
+            <input formControlName="phoneNumber" type="text" class="form-control" prefix="+55 "mask="(00) 0000-0000||(00) 00000-0000">
+            <div *ngIf="fSignUp.phoneNumber.touched && fSignUp.phoneNumber.invalid">
+               <div *ngIf="fSignUp.phoneNumber.errors.required">
+                  <alert type="danger">Telefone é um campo obrigatório!</alert>
+               </div>
+               <div *ngIf="fSignUp.phoneNumber.errors.minLength">
+                  <alert type="danger">Telefone inválido!</alert>
+               </div>
+            </div>
+         </div>
+         <button (click)="signUp()" class="btn btn-primary">Registrar</button>
+      </form>
+      <!-- Alert -->
+      <div *ngIf="errorAlert" class="mt-3">
+         <alert type="danger">{{errorAlert}}</alert>
+      </div>
+   </div>
+</div>

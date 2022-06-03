@@ -1,0 +1,31 @@
+app-side-bar-links-shared {
+    width: 100%;
+}
+
+.side-menu {
+    display: block;
+    position: fixed;
+    top: 60px;
+    width: 200px;
+    background-color: #292b2c;
+    color: yellow;
+    height: 100%;
+    padding: 0px;
+}
+
+.custom-button {
+   background-color: #292b2c;
+   border: none;
+   padding: 0;
+   padding-top: 0.375rem;
+}
+
+
+@media (max-width: 768px) {
+    .side-menu {
+        position: relative;
+        height: auto;
+        width: auto;
+        display: block;
+    }
+ }

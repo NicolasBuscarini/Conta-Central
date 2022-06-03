@@ -1,0 +1,60 @@
+<div class="custom-body">
+   <nav class="navbar-dark custom-top-navbar">
+      <a class="navbar-brand custom-logo" routerLink="/"> 
+         <img class="img-fluid" src="assets/img/logo.png" alt="" />
+      </a>
+      <ul class="navbar-nav list-group list-group-horizontal ms-auto">
+         <li class="top-nav-item">
+            <a *ngIf="!currentUser" class="nav-link" routerLink="/login">Entrar</a>
+         </li>
+         <li class="top-nav-item">
+            <a *ngIf="!currentUser" class="nav-link" routerLink="/register">Registrar</a>
+         </li>
+         <li class="top-nav-item">
+            <a *ngIf="currentUser" class="nav-link" routerLink="/dash">Dashboard</a>
+         </li>
+      </ul>
+   </nav>
+
+   <main class="container-fluid">
+      <div class="row">
+         <div class="col-md-4 custom-margin">
+            <div class="card custom-card">
+               <div class="card-header">Conta Central</div>
+               <div class="card-body">Receba, movimente e guarde seu dinheiro de um jeito simples.</div>
+            </div>
+         </div>
+         <div class="col-md-4 custom-margin">
+            <div class="card custom-card">
+               <div class="card-header">Pague qualquer boleto</div>
+               <div class="card-body">Contas de água, luz, telefone e boletos com o saldo da conta.</div>
+            </div>
+         </div>
+         <div class="col-md-4 custom-margin">
+            <div class="card custom-card">
+               <div class="card-header">Cobrança entre amigos ficou mais fácil</div>
+               <div class="card-body">Mande um lembrete de pagamento com os seus dados para receber transferências.</div>
+            </div>
+         </div>
+      </div>
+   </main>
+   
+</div>
+
+<footer class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="text-center text-lg-start">
+               <div class="p-4">
+                  <div class="text-center">
+                     Precisando de ajuda? Utilize nosso whatsapp para facilitar sua experiência!
+                  </div>
+                  <div class="text-end p-1">
+                     © 2021 Copyright:
+                     <a class="text-reset fw-bold" href="#">Conta Central</a>
+                  </div>
+               </div>
+            </div>
+         </div>         
+      </div>
+</footer>

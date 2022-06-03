@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Lista de Saques</h2>
+        </div>
+
+        <div *ngFor="let saque of listaSaque" class="row border p-2">
+            <div class="col-md-2 text-center">
+                <p class="m-0">ID: {{saque.id}}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <span class="m-0">Data: {{saque.dataHora | date:'medium'}}</span>
+            </div>
+            <div class="col-md-3 text-center text-danger">
+                <p class="m-0">Valor: -R${{saque.valor}}</p>
+            </div>
+            <div class="col-md-3 text-center text-truncate">
+                <p class="m-0">Descrição: {{saque.descricao}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
